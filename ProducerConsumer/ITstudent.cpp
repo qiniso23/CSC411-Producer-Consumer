@@ -119,31 +119,6 @@ float ITstudent::calculate_average() const
 }
 
 //***************************************************************************************************************************************************
-//bool ITstudent::has_passed() const
-//{
-//    return calculate_average() >= 50.0f;
-//}
-
-//***************************************************************************************************************************************************
-//void ITstudent::print_info() const 
-//{
-//    std::cout << "\n========================================\n";
-//    std::cout << "Student Name: " << studentName << "\n";
-//    std::cout << "Student ID: " << studentID << "\n";
-//    std::cout << "Programme: " << programme << "\n";
-//    std::cout << "Courses and Marks:\n";
-//
-//    for (const auto& pair : coursesAndMarks) {
-//        std::cout << "  - " << pair.first << ": " << pair.second << "\n";
-//    }
-//
-//    std::cout << std::fixed << std::setprecision(2);
-//    std::cout << "Average Mark: " << calculateAverage() << "\n";
-//    std::cout << "Status: " << (hasPassed() ? "PASSED" : "FAILED") << "\n";
-//    std::cout << "========================================\n";
-//}
-
-//***************************************************************************************************************************************************
 std::string ITstudent::to_XML() const
 {
     std::ostringstream oss;
@@ -216,18 +191,19 @@ ITstudent ITstudent::from_XML(const std::string& _xml)
 
     size_t course_start = 0;
     std::vector<course_mark> course_marks_;
+    const std::string start_course_tag = "<course>", end_course_tag = "</course>";
 
-    while ((course_start = courses_section.find("<course>", course_start)) != std::string::npos)
+    while ((course_start = courses_section.find(start_course_tag, course_start)) != std::string::npos)
     {
-        size_t course_end = courses_section.find("</course>", course_start);
+        size_t course_end = courses_section.find(end_course_tag, course_start);
 
         if (course_end == std::string::npos)
             break;
 
-        std::string course_block = courses_section.substr(course_start, course_end - course_start - 9);
+        std::string course_block = courses_section.substr(course_start + start_course_tag.length(), course_end - course_start - start_course_tag.length());
 
         course_marks_.push_back({ get_tag_content(course_block, "code"), std::stof(get_tag_content(course_block, "mark")) });
-        course_start = course_end + 9;
+        course_start = course_end + start_course_tag.length();
     }
 
     student.set_course_marks(course_marks_);

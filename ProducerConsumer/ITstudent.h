@@ -31,8 +31,6 @@ public:
 
     // other functions
     float calculate_average() const;
-    //bool has_passed() const;
-    //void print_info() const;
 
     // XML functions
     std::string to_XML() const;
