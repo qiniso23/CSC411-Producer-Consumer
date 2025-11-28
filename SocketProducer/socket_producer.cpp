@@ -8,15 +8,15 @@ socket_producer::socket_producer(int _port)
 	: port(_port)
 	, server_socket(INVALID_SOCKET) 
 {
-        std::random_device rd;
-		generator.seed(rd());
+    std::random_device rd;
+    
+    generator.seed(rd());
 }
 
-//***************************************************************************************************************************************************    
 socket_producer::~socket_producer()
 {
 	if (server_socket != INVALID_SOCKET)
-		closesocket(server_socket);
+        closesocket(server_socket);
 
 #ifdef _WIN32
         WSACleanup();
@@ -35,6 +35,7 @@ bool socket_producer::initialize()
         return false;
     }
 #endif
+
 	server_socket = socket(AF_INET, SOCK_STREAM, 0);
         
 	if (server_socket == INVALID_SOCKET) 
@@ -85,7 +86,7 @@ ITstudent socket_producer::generate_random_student()
 
 	std::shuffle(shuffled_cms.begin(), shuffled_cms.end(), generator);
 
-    const int N = std::min((int)shuffled_cms.size(), num_courses(generator));
+    const int N = (int)std::fmin((int)shuffled_cms.size(), num_courses(generator));
 
     for (int i = 0; i < N; i++)
         course_marks.push_back({ shuffled_cms[i], mark(generator) });

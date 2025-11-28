@@ -26,11 +26,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="socket_consumer.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\ProducerConsumer\ITstudent.h">
-      <Filter>Resource Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="socket_consumer.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

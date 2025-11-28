@@ -1,5 +1,6 @@
 #include "socket_consumer.h"
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <thread>
 #include <chrono>
