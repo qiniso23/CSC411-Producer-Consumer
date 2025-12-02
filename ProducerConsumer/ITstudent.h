@@ -31,6 +31,7 @@ public:
 
     // other functions
     float calculate_average() const;
+    void print_student_info() const;
 
     // XML functions
     std::string to_XML() const;

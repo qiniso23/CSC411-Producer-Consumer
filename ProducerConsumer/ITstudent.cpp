@@ -119,6 +119,26 @@ float ITstudent::calculate_average() const
 }
 
 //***************************************************************************************************************************************************
+void ITstudent::print_student_info() const
+{
+    std::cout << "\n========================================\n";
+    std::cout << "Student Name: " << get_full_name() << "\n";
+    std::cout << "Student ID: " << student_id << "\n";
+    std::cout << "Programme: " << programme << "\n";
+    std::cout << "Courses and Marks:\n";
+
+    for (const auto& course_mark_ : course_marks)
+        std::cout << "  - " << course_mark_.course_code << ": " << course_mark_.mark << "\n";
+
+    const float avg_mark = calculate_average();
+
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Average Mark: " << avg_mark << "\n";
+    std::cout << "Status: " << ((avg_mark > 50.0f) ? "PASSED" : "FAILED") << "\n";
+    std::cout << "========================================\n";
+}
+
+//***************************************************************************************************************************************************
 std::string ITstudent::to_XML() const
 {
     std::ostringstream oss;

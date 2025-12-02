@@ -77,7 +77,7 @@ void socket_consumer::consume_one()
         ITstudent student = ITstudent::from_XML(xml_data);
             
         // display student info
-        print_student_info(student);
+        student.print_student_info();
     }
         
     closesocket(client_socket);
@@ -95,24 +95,4 @@ void socket_consumer::run(int _num_students)
     }
         
     std::cout << "[CONSUMER] Finished consumption\n";
-}
-
-//***************************************************************************************************************************************************
-void socket_consumer::print_student_info(const ITstudent& _student) const
-{
-    std::cout << "\n========================================\n";
-    std::cout << "Student Name: " << _student.get_full_name() << "\n";
-    std::cout << "Student ID: " << _student.get_student_id() << "\n";
-    std::cout << "Programme: " << _student.get_programme() << "\n";
-    std::cout << "Courses and Marks:\n";
-
-    for (const auto& course_mark_ : _student.get_course_marks())
-        std::cout << "  - " << course_mark_.course_code << ": " << course_mark_.mark << "\n";
-
-    const float avg_mark = _student.calculate_average();
-
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Average Mark: " << avg_mark << "\n";
-    std::cout << "Status: " << ((avg_mark > 50.0f) ? "PASSED" : "FAILED") << "\n";
-    std::cout << "========================================\n";
 }

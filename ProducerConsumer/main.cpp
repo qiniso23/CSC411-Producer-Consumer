@@ -26,7 +26,7 @@ int main()
     consumer consumer_(buffer_);
 
     // create producer and consumer threads
-    int num_students = 10;
+    int num_students = 50;
     std::thread producer_thread(&producer::run, &producer_, num_students);
     std::thread consumer_thread(&consumer::run, &consumer_, num_students);
 
