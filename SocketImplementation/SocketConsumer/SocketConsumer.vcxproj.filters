@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\consumer">
+      <UniqueIdentifier>{b01d3324-fb98-431d-8908-493cd77f6487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\student">
+      <UniqueIdentifier>{8fe36b26-24ad-40b3-8827-c44d1bea8344}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\consumer\socket_consumer.cpp">
+      <Filter>source\consumer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\student\ITstudent.cpp">
+      <Filter>source\student</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\consumer\socket_consumer.h">
+      <Filter>source\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\student\course_mark.h">
+      <Filter>source\student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\student\ITstudent.h">
+      <Filter>source\student</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

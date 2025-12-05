@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{e4c4dc3a-a132-4ebf-96c0-3c0a419d373c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\student">
+      <UniqueIdentifier>{53afc764-6e45-4b4b-a8be-9758c3a69c3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\producer">
+      <UniqueIdentifier>{2a59be05-36e6-440c-8a8a-aa2dd6c8fa79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\consumer">
+      <UniqueIdentifier>{3f3a361a-8f10-49a8-986b-6f6306d8cef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\buffer">
+      <UniqueIdentifier>{974a354b-4a18-4273-8c2b-e7b2d0bbe02d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\student\course_mark.h">
+      <Filter>source\student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\student\ITstudent.h">
+      <Filter>source\student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\producer\producer.h">
+      <Filter>source\producer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\buffer\buffer.h">
+      <Filter>source\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\consumer\consumer.h">
+      <Filter>source\consumer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\student\ITstudent.cpp">
+      <Filter>source\student</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\producer\producer.cpp">
+      <Filter>source\producer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\buffer\buffer.cpp">
+      <Filter>source\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\consumer\consumer.cpp">
+      <Filter>source\consumer</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+</Project>

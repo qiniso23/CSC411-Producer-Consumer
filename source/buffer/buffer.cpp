@@ -9,7 +9,7 @@ buffer::buffer(const std::string& _directory)
 //***************************************************************************************************************************************************
 void buffer::produce(int _file_number) 
 {
-    std::unique_lock<std::mutex> lock(mtx); // unlocked at end of block...
+    std::unique_lock<std::mutex> lock(mtx);
 
     // wait while buffer is full
     not_full.wait(lock, [this]() { return buffer_.size() < MAX_SIZE; });
@@ -24,7 +24,7 @@ void buffer::produce(int _file_number)
 //***************************************************************************************************************************************************
 int buffer::consume() 
 {
-    std::unique_lock<std::mutex> lock(mtx); // unlocked at end of block...
+    std::unique_lock<std::mutex> lock(mtx);
 
     // wait while buffer is empty
     not_empty.wait(lock, [this]() { return !buffer_.empty(); });

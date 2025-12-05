@@ -1,6 +1,6 @@
 #include "producer.h"
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 //***************************************************************************************************************************************************
 producer::producer(buffer& _buffer)

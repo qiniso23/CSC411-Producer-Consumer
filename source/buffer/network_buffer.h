@@ -1,19 +1,20 @@
 #pragma once
 
 #include "buffer.h"
-#include "ITstudent.h"
+
+// Network Buffer - shared between producer and network sender threads
 
 //***************************************************************************************************************************************************
-class consumer 
+class network_buffer : public buffer
 {
 public:
     //***********************************************************************************************************************************************
-    consumer(buffer& _buffer);
+    network_buffer(const std::string& _directory);
 
-    void consume();
-    void run(int _num_students);
+    int consume() override;
+    void set_finished();
 
 private:
     //***********************************************************************************************************************************************
-    buffer& buffer_;
+    bool finished;
 };

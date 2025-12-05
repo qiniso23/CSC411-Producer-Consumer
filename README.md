@@ -64,30 +64,45 @@ The system simulates student data management where:
 ```
 CSC411-Producer-Consumer/
 |
-|- README.md                      # This file
-|- demo_video.mp4                 # Presentation video
+|- README.md                           # This file
+|- demo_video.mp4                      # Presentation video
 |
-|- ProducerConsumer/              # Part 1: Main implementation
-|   |- ITstudent.h                # Student class header
-|   |- ITstudent.cpp              # Student class implementation
-|   |- buffer.h                   # Buffer class header
-|   |- buffer.cpp                 # Buffer class implementation
-|   |- producer.cpp               # Producer implementation
-|   |- consumer.cpp               # Consumer implementation
-|   |- main.cpp                   # Main program entry point
-|   |- shared_files/              # Directory for XML files (created at runtime)
+|- LocalImplementation/                # Part 1: Local Threading implementation
+|   |- main.cpp                        # Main program entry point
+|   |- shared_files/                   # Directory for XML files (created at runtime)
 |
-|- SocketProducer/                # Part 3: Server implementation
-|   |- ITstudent.h
-|   |- ITstudent.cpp
-|   |- socket_producer.h          # Producer socket server header
-|   |- socket_producer.cpp        # Producer socket server implementation
+|- SocketImplementation/               # Part 3: Socket programming implementation
+|   |- SocketConsumer/
+|   |   |- main.cpp                    # Main consumer thread entry point
+|   |
+|   |- SocketProducer/
+|       |- main.cpp                    # Main consumer thread entry point
+|       |- network_server.cpp          # Producer socket server implementation
+|       |- network_server.h            # Producer socket server header
 |
-|- SocketConsumer/                # Part 3: Client implementation
-    |- ITstudent.h
-    |- ITstudent.cpp
-    |- socket_consumer.h          # Consumer socket client header
-    |- socket_consumer.cpp        # Consumer socket client implementation
+|- source/
+    |- buffer/
+    |   |- buffer.cpp                  # Buffer class implementation
+    |   |- buffer.h                    # Buffer class header
+    |   |- network_buffer.cpp          # Socket buffer class implementation
+    |   |- network_buffer.h            # Socket buffer class header
+    |
+    |- consumer/
+    |   |- consumer.cpp                # Consumer class implementation
+    |   |- consumer.h                  # Consumer class header
+    |   |- socket_consumer.cpp         # Socket consumer class implementation
+    |   |- socket_consumer.h           # Socket consumer class header
+    |
+    |- producer/
+    |   |- networt_producer.cpp        # Socket producer class implementation
+    |   |- networt_producer.h          # Socket producer class header
+    |   |- producer.cpp                # Producer class implementation
+    |   |- producer.h                  # Producer class header
+    |
+    |- student/
+        |- course_mark.h               # Struct with student's course code and mark
+        |- ITstudent.cpp               # IT student class implementation
+|       |- ITstudent.h                 # IT student class hearder
 
 ```
 

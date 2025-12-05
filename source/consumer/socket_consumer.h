@@ -15,7 +15,7 @@
 #define closesocket close
 #endif
 
-#include "ITstudent.h"
+#include <string>
 
 //***************************************************************************************************************************************************
 class socket_consumer 

@@ -1,40 +1,29 @@
 #pragma once
 
-#ifdef _WIN32
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#pragma comment(lib, "ws2_32.lib")
-#else
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#define SOCKET int
-#define INVALID_SOCKET -1
-#define SOCKET_ERROR -1
-#define closesocket close
-#endif
-
-#include "ITstudent.h"
 #include <random>
-#include <vector>
+#include "buffer/buffer.h"
+#include "student/ITstudent.h"
 
 //***************************************************************************************************************************************************
-class socket_producer
+class producer
 {
 public:
-	//***********************************************************************************************************************************************
-    socket_producer(int _port);
-    ~socket_producer();
-    
-    bool initialize();
+    //***********************************************************************************************************************************************
+    producer(buffer& _buffer);
+
+    std::string generate_random_first_name();
+    std::string generate_random_last_name();
+    int generate_random_id();
+    std::string generate_random_programme();
+    std::vector<course_mark> generate_random_course_marks();
     ITstudent generate_random_student();
-    void run(int _num_students);
+
+    void produce(int _file_number);
+    virtual void run(int _num_students);
 
 private:
-	//********************************************************************************************************************************************
-    SOCKET server_socket;
-    int port;
+    //***********************************************************************************************************************************************
+    buffer& buffer_;
     std::mt19937 generator;
     
     const std::vector<std::string> first_names = {"Sifiso", "Muzi", "James", "Pertunia", "Clementine", "Lindani", "Busiswa", "Barbara", "Elizabeth" };

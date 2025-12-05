@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
+#include "student/ITstudent.h"
 
 //***************************************************************************************************************************************************
 consumer::consumer(buffer& _buffer)

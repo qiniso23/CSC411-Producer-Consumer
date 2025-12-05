@@ -1,9 +1,7 @@
 #include "socket_consumer.h"
-#include <iostream>
-#include <iomanip>
-#include <string>
 #include <thread>
-#include <chrono>
+#include <iostream>
+#include "student/ITstudent.h"
 
 //***************************************************************************************************************************************************
 socket_consumer::socket_consumer(const std::string& _ip, int _port)
@@ -59,7 +57,7 @@ void socket_consumer::consume_one()
         return;
     }
         
-    std::cout << "[CONSUMER] Connected to producer\n";
+    std::cout << "[CONSUMER] Connected to server\n";
         
     // receive data
     char buffer[4096];
@@ -73,12 +71,21 @@ void socket_consumer::consume_one()
             
         std::cout << "[CONSUMER] Received " << bytes_received << " bytes\n";
             
-        // parse XML
-        ITstudent student = ITstudent::from_XML(xml_data);
-            
-        // display student info
-        student.print_student_info();
+        try
+        {
+            // parse XML
+            ITstudent student = ITstudent::from_XML(xml_data);
+
+            // display student info
+            student.print_student_info();
+        }
+        catch(const std::exception& _e)
+        {
+            std::cerr << "[CONSUMER] Error parsing XML: " << _e.what() << "\n";
+        }
     }
+    else
+        std::cerr << "[CONSUMER] No bytes received\n";
         
     closesocket(client_socket);
 }
@@ -91,7 +98,7 @@ void socket_consumer::run(int _num_students)
     for (int i = 0; i < _num_students; i++) 
 	{
         consume_one();
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(2)); // delay between requests
     }
         
     std::cout << "[CONSUMER] Finished consumption\n";

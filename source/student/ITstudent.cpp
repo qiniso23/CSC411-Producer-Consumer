@@ -1,8 +1,7 @@
 #include "ITstudent.h"
-#include <iostream>
 #include <sstream>
 #include <iomanip>
-#include <numeric>
+#include <iostream>
 
 //***************************************************************************************************************************************************
 ITstudent::ITstudent() 

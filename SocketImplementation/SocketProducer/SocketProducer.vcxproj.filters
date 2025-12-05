@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source\buffer">
+      <UniqueIdentifier>{6c69b708-c5c1-40fd-a9be-8adcdf632496}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\producer">
+      <UniqueIdentifier>{43a20a74-5124-4dd7-8ef0-e01c12d33af8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\student">
+      <UniqueIdentifier>{3fd498a8-fa13-4df5-8da5-fd1a46952cf6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="network_server.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\buffer\network_buffer.cpp">
+      <Filter>source\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\producer\network_producer.cpp">
+      <Filter>source\producer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\buffer\buffer.cpp">
+      <Filter>source\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\producer\producer.cpp">
+      <Filter>source\producer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\student\ITstudent.cpp">
+      <Filter>source\student</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="network_server.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\buffer\network_buffer.h">
+      <Filter>source\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\producer\network_producer.h">
+      <Filter>source\producer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\buffer\buffer.h">
+      <Filter>source\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\producer\producer.h">
+      <Filter>source\producer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\student\course_mark.h">
+      <Filter>source\student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\student\ITstudent.h">
+      <Filter>source\student</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
