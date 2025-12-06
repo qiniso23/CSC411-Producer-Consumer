@@ -171,15 +171,14 @@ CSC411-Producer-Consumer/
 
 ## Demo Video
 
-**Video Link**: [Insert YouTube/GitHub link here]
+**Video Link**: https://github.com/qiniso23/CSC411-Producer-Consumer/blob/main/demo_video.mkv
 
 **Video Contents:**
-- Introduction and team members (0:00 - 0:30)
-- Code structure explanation (0:30 - 2:00)
-- Part 1 demonstration (2:00 - 5:00)
-- Part 3 socket demo (5:00 - 7:00)
-- GitHub repository tour (7:00 - 8:00)
-- Conclusion (8:00 - 9:00)
+- Introduction and team members
+- Code structure explanation
+- Part 1 local demonstration
+- Part 3 socket demonstration
+- GitHub repository tour
 
 ---
 
