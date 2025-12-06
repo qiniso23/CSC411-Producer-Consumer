@@ -102,7 +102,7 @@ CSC411-Producer-Consumer/
     |- student/
         |- course_mark.h               # Struct with student's course code and mark
         |- ITstudent.cpp               # IT student class implementation
-|       |- ITstudent.h                 # IT student class hearder
+        |- ITstudent.h                 # IT student class hearder
 
 ```
 
