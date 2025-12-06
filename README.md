@@ -65,7 +65,7 @@ The system simulates student data management where:
 CSC411-Producer-Consumer/
 |
 |- README.md                           # This file
-|- demo_video.mp4                      # Presentation video
+|- demo_video.mkv                      # Presentation video
 |
 |- LocalImplementation/                # Part 1: Local Threading implementation
 |   |- main.cpp                        # Main program entry point
@@ -102,7 +102,7 @@ CSC411-Producer-Consumer/
     |- student/
         |- course_mark.h               # Struct with student's course code and mark
         |- ITstudent.cpp               # IT student class implementation
-|       |- ITstudent.h                 # IT student class hearder
+        |- ITstudent.h                 # IT student class hearder
 
 ```
 
